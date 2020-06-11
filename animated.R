@@ -41,6 +41,12 @@ g_spp <- lapply(X = ct_lst, FUN = function(z) if (z == "l5") {
     annotation_raster(no, ymin = 7.5,ymax= 9,xmin = 3,xmax = 4.5) + 
     geom_point()}
 )
+#save graphs
+lapply(X = 1:4, 
+       FUN = function(x) ggsave(plot = g_spp[[x]], 
+                                filename = paste0("output/spp_", x, ".png"), 
+                                device = "png")
+       )                
 #animated gif
 imgs <- list.files(pattern="spp_", path = "output/")
 saveGIF(movie.name = "spp.gif", 
