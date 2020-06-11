@@ -58,3 +58,8 @@ saveGIF(movie.name = "spp.gif",
                                              ) 
                       ) 
         )
+#video
+av::av_encode_video(input = paste0("output/",imgs), 
+                    output = "output/spp.mp4", 
+                    framerate = 2
+                   )                
